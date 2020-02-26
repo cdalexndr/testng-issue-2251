@@ -1,0 +1,24 @@
+plugins {
+    id 'org.springframework.boot' version '2.2.0.RELEASE'
+}
+apply plugin: 'java'
+apply plugin: 'io.spring.dependency-management'
+
+wrapper {
+    gradleVersion = '6.2.1'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation group: 'org.testng', name: 'testng', version: '7.1.0'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+test {
+    useTestNG() {
+        useDefaultListeners = true
+    }
+}
